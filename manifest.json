@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Listing Collector for Etsy",
+  "version": "1.0.0",
+  "description": "Save Etsy listings into three research lists while you browse, then export them to a spreadsheet.",
+  "permissions": ["storage", "clipboardWrite"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "Listing Collector for Etsy",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.etsy.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

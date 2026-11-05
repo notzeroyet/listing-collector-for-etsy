@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Listing Collector for Etsy</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top__title">
+      <img src="icons/icon48.png" alt="" width="20" height="20">
+      <span>Listing Collector for Etsy</span>
+    </div>
+    <div class="top__actions">
+      <button id="openPage" class="link" type="button" title="Open this list in a full browser tab">Open full page</button>
+      <button id="toggleSettings" class="link" type="button">Rename lists</button>
+    </div>
+  </header>
+
+  <section id="settings" class="settings" hidden>
+    <p class="settings__help">These names show on the buttons under every listing. Change one and it updates everywhere.</p>
+    <label>List 1 <input type="text" data-bucket="ad-research" maxlength="24"></label>
+    <label>List 2 <input type="text" data-bucket="ad-reference" maxlength="24"></label>
+    <label>List 3 <input type="text" data-bucket="product-idea" maxlength="24"></label>
+  </section>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <div class="toolbar">
+    <button id="exportCsv" class="btn btn--primary" type="button" title="Downloads a CSV file you can open in Excel or import into Google Sheets">Download CSV</button>
+    <button id="copyTsv" class="btn" type="button" title="Copies the list so you can paste it straight into a Google Sheet">Copy for Google Sheets</button>
+    <button id="clearList" class="btn btn--danger" type="button">Clear this list</button>
+    <span id="toast" class="toast"></span>
+  </div>
+
+  <div id="list" class="list"></div>
+
+  <p id="empty" class="empty" hidden>
+    Nothing saved yet. Browse Etsy search results or open a listing and click one of the three save buttons.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
