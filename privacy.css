@@ -1,0 +1,88 @@
+/* Listing Collector for Etsy: Privacy Mode.
+   Every rule here only acts while privacy.js has marked the page with
+   <html data-elc-privacy="on">, which happens when Privacy Mode is switched on
+   in the popup. With it off, Etsy looks exactly as normal. */
+
+/* Names: a gray bar instead of the text. privacy.js decides which words. */
+html[data-elc-privacy] ::highlight(elc-private) {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-color: #c4c4c4;
+  text-shadow: none;
+}
+
+/* Shop logos, owner photos, reviewer avatars and buyer review photos.
+   Etsy keeps these in their own image folders: iusa (avatars and shop logos),
+   isla (shop icons and owner photos) and iap (review photos). Product photos
+   live in il and are never blurred. */
+html[data-elc-privacy] img[src*="/iusa/"],
+html[data-elc-privacy] img[srcset*="/iusa/"],
+html[data-elc-privacy] img[src*="/isla/"],
+html[data-elc-privacy] img[srcset*="/isla/"],
+html[data-elc-privacy] [data-appears-component-name="shop_owners"] img,
+html[data-elc-privacy] .shop-icon img,
+html[data-elc-privacy] [data-review-region] img:not([src*="/il/"]):not([src*="/il_"]):not([src*="/iap/"]) {
+  filter: blur(12px) grayscale(0.4) !important;
+  clip-path: inset(0) !important;
+}
+
+/* Buyer photos can be large and show faces, so they get a heavier blur. */
+html[data-elc-privacy] img[src*="/iap/"],
+html[data-elc-privacy] img[srcset*="/iap/"] {
+  filter: blur(22px) grayscale(0.4) !important;
+  clip-path: inset(0) !important;
+}
+
+/* Shop banners carry the shop name in big letters, so they get a heavier blur. */
+html[data-elc-privacy] img[src*="/isbl/"],
+html[data-elc-privacy] img[srcset*="/isbl/"],
+html[data-elc-privacy] img[src*="/isbe/"],
+html[data-elc-privacy] img[srcset*="/isbe/"],
+html[data-elc-privacy] .cover-photo-wrap img {
+  filter: blur(40px) grayscale(0.4) !important;
+  clip-path: inset(0) !important;
+}
+
+/* Your own avatar in Etsy's top bar stays as it is. */
+html[data-elc-privacy] #gnav-header-inner img,
+html[data-elc-privacy] #gnav-header img {
+  filter: none !important;
+  clip-path: none !important;
+}
+
+/* A shop link keeps its hand cursor while privacy.js hides its address. */
+html[data-elc-privacy] a[data-elc-href] {
+  cursor: pointer;
+}
+
+/* The corner badge, so you can see Privacy Mode is on before you record. */
+.elc-privacy-badge {
+  display: none;
+}
+
+html[data-elc-privacy] .elc-privacy-badge {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 2147483000;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  background: #222;
+  color: #fff;
+  font: 600 12px/1.2 "Graphik Webfont", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.01em;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  user-select: none;
+}
+
+html[data-elc-privacy] .elc-privacy-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f1641e;
+}

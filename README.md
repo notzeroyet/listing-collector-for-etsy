@@ -41,6 +41,28 @@ saved listings are kept in Chrome's own storage, so they're still there.
 - **Download CSV** saves the list as a spreadsheet file. Google Sheets, Excel and Numbers all open it.
 - **Copy for Google Sheets** copies the table so you can paste it into cell A1 of a sheet.
 
+## Privacy Mode, for screen recordings
+
+If you record your Etsy research for a video, Privacy Mode hides who is behind each
+listing so you aren't putting other sellers or their buyers on screen.
+
+- **Turn it on:** click the toolbar icon and flip the **Privacy Mode** switch. Open Etsy
+  tabs change right away, and the setting is remembered. A small **Privacy Mode On**
+  badge sits in the bottom left corner of Etsy pages while it's on.
+- **What it hides:** shop names (search results, the "Ad · By" line, listing pages,
+  shop pages and any text naming the shop), shop logos and banners, the owner's name
+  and photo, reviewer names, reviewer photos and buyer review photos. On a shop page
+  the tab title reads "Shop name hidden".
+- **What stays:** product photos, titles, prices, sales counts, ratings and badges.
+- **It keeps up as you scroll,** including new results, more reviews and review photo
+  pop ups.
+- **Saving still works.** The save buttons and the CSV still record the real shop name.
+  The list in the popup shows "Shop hidden" while Privacy Mode is on.
+
+Two things no extension can hide: the shop name in Chrome's address bar on a shop page
+(crop the top of the window out in your video editor), and a viewer who goes looking
+for a shop on their own. Hiding names is a courtesy to other sellers, not a lock.
+
 ## What gets saved for each listing
 
 List, Title, Listing URL, Shop, Shop URL, Price, Original price (when on sale), Ad, Date added, Note, Search

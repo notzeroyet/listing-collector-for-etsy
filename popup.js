@@ -30,6 +30,7 @@
   var items = {};
   var labels = Object.assign({}, DEFAULT_LABELS);
   var filter = 'all';
+  var privacyOn = false;
 
   var $ = function (id) { return document.getElementById(id); };
 
@@ -54,9 +55,10 @@
   }
 
   function load(cb) {
-    store.get(['items', 'labels'], function (data) {
+    store.get(['items', 'labels', 'privacyMode'], function (data) {
       items = data.items || {};
       labels = Object.assign({}, DEFAULT_LABELS, data.labels || {});
+      privacyOn = !!data.privacyMode;
       cb();
     });
   }
@@ -125,7 +127,9 @@
       var meta = document.createElement('div');
       meta.className = 'row__meta';
       var bits = [];
-      if (r.shop) bits.push(r.shop);
+      // With Privacy Mode on, the list hides shop names too, in case it is on
+      // screen while recording. Exports still include them.
+      if (r.shop) bits.push(privacyOn ? 'Shop hidden' : r.shop);
       if (r.price) bits.push(r.price + (r.originalPrice ? ' (was ' + r.originalPrice + ')' : ''));
       bits.push(formatDate(r.addedAt));
       bits.forEach(function (b) {
@@ -191,7 +195,16 @@
     }
   }
 
+  function renderPrivacy() {
+    $('privacyMode').checked = privacyOn;
+    $('privacyRow').classList.toggle('privacy--on', privacyOn);
+    $('privacyHelp').textContent = privacyOn
+      ? 'On. Shop names, logos, owners and reviewers are hidden on every Etsy page.'
+      : 'Turn on before you record. Hides shop names, logos, owners and reviewers on Etsy pages.';
+  }
+
   function render() {
+    renderPrivacy();
     renderTabs();
     renderList();
     renderSettings();
@@ -275,6 +288,13 @@
   $('toggleSettings').addEventListener('click', function () {
     $('settings').hidden = !$('settings').hidden;
   });
+  $('privacyMode').addEventListener('change', function (e) {
+    privacyOn = e.target.checked;
+    store.set({ privacyMode: privacyOn }, function () {
+      render();
+      toast(privacyOn ? 'Privacy Mode on' : 'Privacy Mode off');
+    });
+  });
   $('openPage').addEventListener('click', function () {
     chrome.tabs.create({ url: chrome.runtime.getURL('popup.html?page=1') });
   });
@@ -294,6 +314,7 @@
     if (area !== 'local') return;
     if (changes.items) items = changes.items.newValue || {};
     if (changes.labels) labels = Object.assign({}, DEFAULT_LABELS, changes.labels.newValue || {});
+    if (changes.privacyMode) privacyOn = !!changes.privacyMode.newValue;
     render();
   });
 
