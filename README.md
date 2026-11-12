@@ -84,7 +84,7 @@ If Etsy changes its page design and the buttons stop appearing, I'll update the 
 
 ## Support
 
-This extension is free, and it stays free. If it helped you, you can [buy me a coffee on Ko-fi](https://ko-fi.com/derekryans). Your support is highly
+This extension is free, and it stays free. If it helped you, you can [buy me a boba on Ko-fi](https://ko-fi.com/derekryans). Your support is highly
 appreciated! Video tutorials for every tool are on the [Not Zero Yet YouTube channel](https://www.youtube.com/@NotZeroYet?sub_confirmation=1).
 
 ## License
