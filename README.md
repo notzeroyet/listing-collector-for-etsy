@@ -82,6 +82,13 @@ If Etsy changes its page design and the buttons stop appearing, I'll update the 
 - [TypePress](https://notzeroyet.com/typepress/): turn phrases into print ready designs in bulk.
 - [Etsy profit calculator](https://notzeroyet.com/etsy-print-on-demand-profit-calculator/): free on notzeroyet.com.
 
+## A Community Worth Knowing
+
+If you want coaching and weekly niche research on top of these free tools, I'm a member of
+[Merch Mastermind](https://www.skool.com/merch-mastermind), Philip Anders's Skool community for Amazon Merch and
+Etsy sellers, and I've gotten a lot of value out of it. It's a paid community and I'm not affiliated with it, I'm
+sharing it because good work in print on demand deserves to be passed along. Linked here with Philip's permission.
+
 ## Support
 
 This extension is free, and it stays free. If it helped you, you can [buy me a boba on Ko-fi](https://ko-fi.com/derekryans). Your support is highly
