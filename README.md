@@ -84,10 +84,13 @@ If Etsy changes its page design and the buttons stop appearing, I'll update the 
 
 ## A Community Worth Knowing
 
-If you want coaching and weekly niche research on top of these free tools, I'm a member of
-[Merch Mastermind](https://www.skool.com/merch-mastermind), Philip Anders's Skool community for Amazon Merch and
-Etsy sellers, and I've gotten a lot of value out of it. It's a paid community and I'm not affiliated with it, I'm
-sharing it because good work in print on demand deserves to be passed along. Linked here with Philip's permission.
+I just want to leave a note here to say that one of the most valuable paid communities for print on demand sellers
+that I have personally found and decided to join is Merch Mastermind by Philip Anders and Adam Young. They're both
+legends in the print on demand space on YouTube. I'm not affiliated with them in any shape or form. I just
+appreciate their work and have gotten sales on my own accounts using their systems.
+
+I've linked the [Merch Mastermind Skool community](https://www.skool.com/merch-mastermind) here with Philip's
+permission, along with [his YouTube channel](https://www.youtube.com/@PhilipAnders).
 
 ## Support
 
